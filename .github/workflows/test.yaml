@@ -11,16 +11,16 @@ jobs:
       fail-fast: false
       matrix:
         uv-resolution: ["highest", "lowest"]
+    env:
+      UV_RESOLUTION: ${{ matrix.uv-resolution }}
+      UV_SYSTEM_PYTHON: true
     steps:
       - uses: actions/checkout@v4.2.2
       - uses: actions/setup-python@v5.3.0
         with:
           python-version: "3.10"
       - run: pipx install uv
-      - run: uv venv
       - run: uv pip install .
-        env:
-          UV_RESOLUTION: ${{ matrix.uv-resolution }}
       - run: uv run python -m doctest -v src/boto3dep/__init__.py
       - run: uv pip install pytest
       - run: uv run pytest src/boto3dep/__init__.py  --doctest-modules
