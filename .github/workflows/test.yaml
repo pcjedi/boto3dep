@@ -4,9 +4,16 @@ on:
     branches:
       - main
 
+env:
+  PYTHONUNBUFFERED: true
+
+permissions: {}
+
 jobs:
   build:
     runs-on: ubuntu-24.04
+    permissions:
+      contents: read
     strategy:
       fail-fast: false
       matrix:
@@ -16,6 +23,7 @@ jobs:
       - uses: actions/setup-python@v5.3.0
         with:
           python-version: "3.10"
+          check-latest: true
       - run: pipx install uv
       - run: uv venv
       - run: uv pip install .[test]
