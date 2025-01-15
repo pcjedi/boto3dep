@@ -20,6 +20,5 @@ jobs:
         with:
           python-version: "3.8"
       - run: pipx install uv
-      - run: uv pip install .
       - run: uv pip install '.[test]'
-      - run: pytest src/boto3dep/__init__.py  --doctest-modules
+      - run: pytest --doctest-modules src/boto3dep/__init__.py
