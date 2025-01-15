@@ -1,4 +1,4 @@
-import botocore
+import botocore.session
 
 
 def example():
@@ -6,4 +6,4 @@ def example():
     >>> 1 + 1
     2
     """
-    return botocore
+    return botocore.session
