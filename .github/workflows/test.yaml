@@ -13,8 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
       - run: pipx install uv
+      - run: uv venv
       - run: uv pip install .
         env:
           UV_RESOLUTION: ${{ matrix.uv-resolution }}
-          UV_SYSTEM_PYTHON: true
       - run: uv run python -m doctest -v src/boto3dep/__init__.py
