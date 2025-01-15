@@ -20,7 +20,6 @@ jobs:
         with:
           python-version: "3.10"
       - run: pipx install uv
-      - run: uv pip install .
+      - run: uv pip install '.[test]'
       - run: uv run python -m doctest -v src/boto3dep/__init__.py
-      - run: uv pip install pytest
       - run: uv run pytest src/boto3dep/__init__.py  --doctest-modules
