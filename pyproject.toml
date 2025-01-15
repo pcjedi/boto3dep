@@ -2,5 +2,5 @@
 name = "boto3dep"
 version = "0.1.0"
 dependencies = [
-    "boto3",
+    "boto3 >= 1.35.99",
 ]
