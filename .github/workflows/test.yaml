@@ -22,3 +22,4 @@ jobs:
         env:
           UV_RESOLUTION: ${{ matrix.uv-resolution }}
       - run: uv run python -m doctest -v src/boto3dep/__init__.py
+      - run: uv run pytest src/boto3dep/__init__.py  --doctest-modules
