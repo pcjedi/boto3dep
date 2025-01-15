@@ -1,5 +1,6 @@
 import boto3
 import dateutil
+from six import PY3, string_types
 
 
 def get_s3_client():
