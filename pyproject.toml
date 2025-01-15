@@ -1,0 +1,6 @@
+[project]
+name = "boto3dep"
+version = "0.1.0"
+dependencies = [
+    "boto3",
+]
