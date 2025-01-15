@@ -1,6 +1,7 @@
 [project]
 name = "boto3dep"
 version = "0.1.0"
+requires-python = ">=3.8"
 dependencies = [
     "boto3 >= 1.34.131",
     "cachetools >= 5"
