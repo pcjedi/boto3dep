@@ -18,7 +18,7 @@ jobs:
           python-version: "3.10"
       - run: pipx install uv
       - run: uv venv
-      - run: uv pip install .
+      - run: uv pip install .[test]
         env:
           UV_RESOLUTION: ${{ matrix.uv-resolution }}
       - run: uv run python -m doctest -v src/boto3dep/__init__.py
