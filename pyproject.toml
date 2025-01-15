@@ -3,7 +3,7 @@ name = "botocoredep"
 version = "0.1.0"
 requires-python = ">=3.8"
 dependencies = [
-    "botocore >= 1.35.99",
+    "botocore @ git+https://github.com/pcjedi/botocore@python-dateutil-2.7",
 ]
 
 [project.optional-dependencies]
